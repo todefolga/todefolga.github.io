@@ -26,7 +26,7 @@
       NextHolidays && el.append($('<div class="col-sm-6"></div>').append(NextHolidays));
       PreviousHolidays && el.append($('<div class="col-sm-6"></div>').append(PreviousHolidays));
       
-      $('[data-holidays]').hide().html(`<div class="display-4 text-center fw-medium mb-3">Feriados ${cur_year}</div>`);
+      $('[data-holidays]').hide().html(`<div class="display-5 text-center fw-medium mb-3">Feriados ${cur_year}</div>`);
       $("[data-holidays]").append($('<div class="container-md"></div>').append(el)).fadeIn();
     }
     
@@ -110,10 +110,10 @@
       axios({ url: `https://brasilapi.com.br/api/feriados/v1/${cur_year}` }).then(done, fail);
     }
     
-    $("[data-content]").append('<div class="container-md py-3"><div class="input-group input-group-lg"><label class="input-group-text" for="inputYear">Feriados</label><input name="year" type="tel" id="inputYear" class="form-control text-center" aria-label="ano" placeholder="ano"></div></div>');
+    $("[data-content]").append('<div class="container-md sticky-top text-bg-dark py-3"><div class="input-group input-group-lg"><label class="input-group-text" for="inputYear">Feriados</label><input name="year" type="tel" id="inputYear" class="form-control text-center" aria-label="ano" placeholder="ano"></div></div>');
     $("[data-content]").append($('<div data-holidays></div>'));
     $('input[name="year"]').val(moment().year()).on("input", function(evt) {
-        this.value = this.value.replace(/\D+/, "").slice(0, 4);
+        this.value = this.value.replace(/\D+/g, "").slice(0, 4);
         
         if (this.value.length === 4) {
           if ((this.value > 1899) && (this.value < 2200)) {
