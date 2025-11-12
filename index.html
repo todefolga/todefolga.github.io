@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Feriados no Brasil</title>
+	<link rel="stylesheet" href="static/css/libs/bootstrap.min.css">
+	<link rel="stylesheet" href="static/css/libs/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="static/css/libs/jquery-confirm.min.css">
+	<link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body class="text-bg-dark user-select-none">
+	<div class="border-warning" data-content></div>
+	
+	<div class="position-fixed text-bg-danger top-0 start-0 w-100 h-100" style="z-index: 99999;" data-splash="error"></div>
+	
+	<div class="position-fixed top-0 start-0 w-100 h-100 z-1" style="z-index: 99999; background-color: rgba(0, 0, 0, 0.75);" data-splash="spinner">
+		<div class="position-absolute top-50 start-50 translate-middle">
+			<div class="text-center">
+				<div class="spinner-border text-light" role="status" style="width: 4rem; height: 4rem;">
+					<span class="visually-hidden">Loading...</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="static/js/libs/axios.min.js"></script>
+	<script src="static/js/libs/jquery.min.js"></script>
+	<script src="static/js/libs/handlebars.min.js"></script>
+	<script src="static/js/libs/jquery-confirm.min.js"></script>
+	<script src="static/js/libs/bootstrap.bundle.min.js"></script>
+	<script src="static/js/libs/moment-with-locales.min.js"></script>
+	
+	<script src="static/js/jquery-confirm.default.js"></script>
+	<script src="static/js/feriados.js"></script>
+</body>
+
+</html>
