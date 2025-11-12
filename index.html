@@ -4,27 +4,26 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-title" content="Feriados">
+	
 	<title>Feriados no Brasil</title>
+	
+	<link rel="manifest" href="static/manifest.json">
 	<link rel="stylesheet" href="static/css/libs/bootstrap.min.css">
 	<link rel="stylesheet" href="static/css/libs/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="static/css/libs/jquery-confirm.min.css">
 	<link rel="stylesheet" href="static/css/style.css">
+	
+	<link rel="icon" type="image/png" href="/static/img/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="/static/img/apple-touch-icon.png">
+	<link rel="shortcut icon" href="/favicon.ico">
 </head>
 
 <body class="text-bg-dark user-select-none">
 	<div class="border-warning" data-content></div>
 	
 	<div class="position-fixed text-bg-danger top-0 start-0 w-100 h-100" style="z-index: 99999;" data-splash="error"></div>
-	
-	<div class="position-fixed top-0 start-0 w-100 h-100 z-1" style="z-index: 99999; background-color: rgba(0, 0, 0, 0.75);" data-splash="spinner">
-		<div class="position-absolute top-50 start-50 translate-middle">
-			<div class="text-center">
-				<div class="spinner-border text-light" role="status" style="width: 4rem; height: 4rem;">
-					<span class="visually-hidden">Loading...</span>
-				</div>
-			</div>
-		</div>
-	</div>
 	
 	<script src="static/js/libs/axios.min.js"></script>
 	<script src="static/js/libs/jquery.min.js"></script>
