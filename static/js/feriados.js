@@ -35,10 +35,11 @@
       $("[data-holidays]").hide(0, function(evt) {
         $(this).html(`
           <div class="container-md">
-            <div class="d-flex justify-content-center gap-2">
-              <div><i class="bi bi-exclamation-circle-fill text-danger"></i></div>
-              <div>
-                <div>Something went wrong!</div>
+            <div class="bg-black rounded border border-secondary p-3">
+              <div class="fw text-center text-light fs-5">Something went wrong!</div>
+            
+              <div class="d-flex justify-content-center gap-2">
+                <div><i class="bi bi-exclamation-circle-fill text-danger"></i></div>
                 <div class="text-center"><code class="text-danger">${response.message}</code></div>
               </div>
             </div>
@@ -106,9 +107,7 @@
       }
     }
     
-    function feriadosBrasileiro() {
-      axios({ url: `https://brasilapi.com.br/api/feriados/v1/${cur_year}` }).then(done, fail);
-    }
+    function feriadosBrasileiro() { axios({ url: `https://brasilapi.com.br/api/feriados/v1/${cur_year}` }).then(done).catch(fail); }
     
     $("[data-content]").append('<div class="container-md sticky-top text-bg-dark py-3"><div class="input-group input-group-lg"><label class="input-group-text" for="inputYear">Feriados</label><input name="year" type="tel" id="inputYear" class="form-control text-center" aria-label="ano" placeholder="ano"></div></div>');
     $("[data-content]").append($('<div data-holidays></div>'));
