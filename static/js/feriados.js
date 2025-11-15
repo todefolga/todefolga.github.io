@@ -53,11 +53,9 @@
       return `
       <div class="col-sm-6 mb-3">
 			  <div class="card text-center">
-				  <div class="card-header bg-dark">
-					  <h5 class="card-title text-danger m-0">{{holiday.name}}</h5>
-				  </div>
-				
 				  <div class="card-body">
+				    <h5 class="card-title text-danger m-0">{{holiday.name}}</h5>
+				    <hr class="my-2">
 					  <h4 class="m-0">{{ dateFormat holiday.date "dddd, D [de] MMMM"}}</h4>
 				  </div>
 				
