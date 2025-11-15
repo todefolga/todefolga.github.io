@@ -1,4 +1,4 @@
-(function(global) {
+! function(global) {
   "use strict";
   
   moment.locale(navigator.language);
@@ -22,11 +22,12 @@
       var NextHolidays = nextHolidays(holidays);
       var PreviousHolidays = previousHolidays(holidays);
       
+      $('[data-holidays]').hide().html(`<div class="display-5 text-center fw-medium mb-3">Feriados ${cur_year}</div>`);
+      
       TodayIsHoliday && $("[data-holidays]").append($('<div class="container-md"></div>').append(TodayIsHoliday));
       NextHolidays && el.append($('<div class="col-sm-6"></div>').append(NextHolidays));
       PreviousHolidays && el.append($('<div class="col-sm-6"></div>').append(PreviousHolidays));
       
-      $('[data-holidays]').hide().html(`<div class="display-5 text-center fw-medium mb-3">Feriados ${cur_year}</div>`);
       $("[data-holidays]").append($('<div class="container-md"></div>').append(el)).fadeIn();
     }
     
@@ -132,4 +133,4 @@
       .focus(function(evt) { this.select() })
       .trigger("input");
   });
-})(this);
+}(this);
