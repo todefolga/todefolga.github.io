@@ -61,8 +61,10 @@
 					  <h4 class="m-0">{{ dateFormat holiday.date "dddd, D [de] MMMM"}}</h4>
 				  </div>
 				
-				  <div class="card-footer text-body-secondary">
-					  <small class="fw-bolder text-secondary text-uppercase" data-calendar>{{dateCalendar holiday.date}}</small>
+				  <div class="card-footer bg-dark">
+				    <div class="animate__animated animate__heartBeat animate__infinite">
+					    <small class="fw-bolder text-secondary text-uppercase" data-calendar>{{dateCalendar holiday.date}}</small>
+					  </div>
 				  </div>
 			  </div>
 		  </div>
@@ -74,7 +76,8 @@
       var holidays = arguments[0].filter(holiday => moment(holiday.date).isSame(moment().format("YYYY-MM-DD")));
       
       holidays.forEach((holiday) => {
-        el.append($(Handlebars.compile(template()).call(Handlebars, { holiday })).removeClass("col-sm-6 mb-3").addClass("col-md-6")) //.find(".card").addClass("border border-5 border-success");
+        el.append($(Handlebars.compile(template()).call(Handlebars, { holiday })).removeClass("col-sm-6 mb-3").addClass("col-md-6"));
+        el.find("[data-calendar]").addClass("text-danger");
       });
       
       if (holidays.length) return el;
@@ -86,12 +89,10 @@
       
       holidays.forEach((holiday) => {
         el.append($(Handlebars.compile(template()).call(Handlebars, { holiday })));
+        el.find("[data-calendar]").addClass("text-info");
       });
       
-      if (holidays.length) {
-        el.prepend('<div class="w-100"><h3 class="py-3 m-0">Próximos feriados</h3></div>');
-        return el;
-      }
+      if (holidays.length) return el.prepend('<div class="w-100"><h3 class="py-3 m-0">Próximos feriados</h3></div>');
     }
     
     function previousHolidays(holidays) {
@@ -99,13 +100,11 @@
       var holidays = arguments[0].filter(holiday => moment(holiday.date).isBefore(moment().format("YYYY-MM-DD"))).reverse();
       
       holidays.forEach((holiday) => {
-        el.append($(Handlebars.compile(template()).call(Handlebars, { holiday }))) //.find(".card").addClass("border border-5 border-secondary");
+        el.append($(Handlebars.compile(template()).call(Handlebars, { holiday })));
+        el.find("[data-calendar]").addClass("text-warning");
       });
       
-      if (holidays.length) {
-        el.prepend('<div class="w-100"><h3 class="py-3 m-0">Feriados anteriores</h3></div>');
-        return el;
-      }
+      if (holidays.length) return el.prepend('<div class="w-100"><h3 class="py-3 m-0">Feriados anteriores</h3></div>');
     }
     
     function feriadosBrasileiro() { axios({ url: `https://brasilapi.com.br/api/feriados/v1/${cur_year}` }).then(done).catch(fail); }
