@@ -62,7 +62,7 @@
 				  </div>
 				
 				  <div class="card-footer text-body-secondary">
-					  <small class="fw-bolder text-secondary text-uppercase">{{dateCalendar holiday.date}}</small>
+					  <small class="fw-bolder text-secondary text-uppercase" data-calendar>{{dateCalendar holiday.date}}</small>
 				  </div>
 			  </div>
 		  </div>
@@ -85,7 +85,7 @@
       var holidays = arguments[0].filter(holiday => moment(holiday.date).isAfter(moment().format("YYYY-MM-DD")));
       
       holidays.forEach((holiday) => {
-        el.append($(Handlebars.compile(template()).call(Handlebars, { holiday }))) //.find(".card").addClass("border border-5 border-success");
+        el.append($(Handlebars.compile(template()).call(Handlebars, { holiday })));
       });
       
       if (holidays.length) {
