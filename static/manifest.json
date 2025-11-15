@@ -14,7 +14,7 @@
     "src": "/static/img/icon512_rounded.png",
     "type": "image/png"
   }],
-  "orientation": "any",
+  "orientation": "portrait",
   "display": "standalone",
   "dir": "auto",
   "lang": "pt-BR",
